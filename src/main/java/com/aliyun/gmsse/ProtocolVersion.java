@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 final public class ProtocolVersion implements Comparable {
-    public static final ProtocolVersion NTLS_1_1 = new ProtocolVersion(1, 1, "NTLSv1.1");
+    public static final ProtocolVersion NTLS_1_1 = new ProtocolVersion(1, 1, "GMTLSv1.1");
 
     private final int major;
     private final int minor;

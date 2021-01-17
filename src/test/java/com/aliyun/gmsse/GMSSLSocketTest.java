@@ -73,7 +73,7 @@ public class GMSSLSocketTest {
         Assert.assertFalse(sslSocket.getEnableSessionCreation());
 
         String[] strings = sslSocket.getEnabledProtocols();
-        Assert.assertEquals("NTLSv1.1", strings[0]);
+        Assert.assertEquals("GMTLSv1.1", strings[0]);
 
         sslSocket.setNeedClientAuth(false);
         sslSocket.setWantClientAuth(false);
@@ -85,7 +85,7 @@ public class GMSSLSocketTest {
         Assert.assertEquals("ECC-SM2-WITH-SM4-SM3", strings[0]);
 
         strings = sslSocket.getSupportedProtocols();
-        Assert.assertEquals("NTLSv1.1", strings[0]);
+        Assert.assertEquals("GMTLSv1.1", strings[0]);
 
         sslSocket.setUseClientMode(true);
         Assert.assertTrue(sslSocket.getUseClientMode());
@@ -112,7 +112,7 @@ public class GMSSLSocketTest {
             Assert.assertNotNull(e);
         }
 
-        strings = new String[] { "NTLSv1.1", "test" };
+        strings = new String[] { "GMTLSv1.1", "test" };
         try {
             sslSocket.setEnabledProtocols(strings);
             Assert.fail();
@@ -120,7 +120,7 @@ public class GMSSLSocketTest {
             Assert.assertEquals("unsupported protocol: test", e.getMessage());
         }
 
-        strings = new String[] { "NTLSv1.1", "NTLSv1.1" };
+        strings = new String[] { "GMTLSv1.1", "GMTLSv1.1" };
         sslSocket.setEnabledProtocols(strings);
         Field session = sslSocket.getClass().getDeclaredField("session");
         session.setAccessible(true);

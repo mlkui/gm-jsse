@@ -200,7 +200,7 @@ public class GMSSLSocket extends SSLSocket {
             throw new IllegalArgumentException();
         }
         for (int i = 0; i < protocols.length; i++) {
-            if (!(protocols[i].equalsIgnoreCase("NTLSv1.1"))) {
+            if (!(protocols[i].equalsIgnoreCase("GMTLSv1.1"))) {
                 throw new IllegalArgumentException("unsupported protocol: " + protocols[i]);
             }
         }
